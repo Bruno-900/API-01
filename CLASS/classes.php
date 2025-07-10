@@ -9,7 +9,7 @@ class Consulta{
     }
     
     public function Agendar($paciente,$dentista, $horario) {
-        $sql = "INSERT INTO consulta (paciente, medicos , horario) VALUES (?,?,?)";
+        $sql = "INSERT INTO consulta (paciente, medico , horario) VALUES (?,?,?)";
         $stmt = $this->conexao->prepare($sql); // Prepara o SQL para execução
         return $stmt->execute([$paciente, $dentista, $horario]); // Executa com os valores
         

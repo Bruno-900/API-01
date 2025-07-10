@@ -20,7 +20,7 @@ if ($metodo == 'GET'){
     
     $dados = json_decode(file_get_contents("php://input"), true);  //file_get_contents("php://input") Lê o corpo da requisição HTTP (geralmente um JSON enviado em um POST, PUT, ou DELETE)
     
-    if ($consulta->Agendar($dados['paciente'], $dados['dentista'], $dados['horario'])){
+    if ($consulta->Agendar($dados['paciente'], $dados['medico'], $dados['horario'])){
         echo json_encode(["mensagem" => "Consulta agendada com sucesso."]);
     }else{
         echo json_encode(["mensagem" => "Erro ao agendar"]);
